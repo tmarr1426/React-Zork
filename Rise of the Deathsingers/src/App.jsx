@@ -2,6 +2,13 @@ import { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
+  const [start, setStart] = useState(false);
+
+  const gameStart = (start) => {
+    console.log(start);
+    setStart(true);
+    console.log(start);
+  };
   return (
     <>
       <div>
@@ -9,23 +16,9 @@ function App() {
         adventure?
       </div>
       <div>
-        <button>Start</button>
+        <button gameStart={gameStart}>Start</button>
         <button>Close</button>
       </div>
-      {/* <div>
-        <button>
-          <Warrior>Warrior</Warrior>
-        </button>
-        <button>
-          <Mage>Mage</Mage>
-        </button>
-        <button>
-          <Rogue>Rogue</Rogue>
-        </button>
-        <button>
-          <Priest>Priest</Priest>
-        </button>
-      </div> */}
     </>
   );
 }
