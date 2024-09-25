@@ -1,7 +1,7 @@
 import React from "react";
 
-const Mage = () => {
-  return <div>Mage</div>;
+const Mage = ({ onSelect }) => {
+  return <button onClick={() => onSelect("Mage")}>Mage</button>;
 };
 
 export default Mage;

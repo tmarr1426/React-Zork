@@ -1,7 +1,7 @@
 import React from "react";
 
-const Rogue = () => {
-  return <div>Rogue</div>;
+const Rogue = ({ onSelect }) => {
+  return <button onClick={() => onSelect("Rogue")}>Rogue</button>;
 };
 
 export default Rogue;
