@@ -1,12 +1,21 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import { Warrior, Mage, Priest, Rogue, Adventure } from "./index";
+import {
+  Warrior,
+  Mage,
+  Priest,
+  Rogue,
+  Adventure,
+  ChapterOne,
+  DiceRoller,
+} from "./index";
 
 function App() {
   // State tracking for starting the game
   const [start, setStart] = useState(false);
   // State tracking for player class
   const [playerClass, setPlayerClass] = useState(null);
+  const [classInfo, setClassInfo] = useState(null);
 
   // Function to start the game
   const gameStart = (start) => {
@@ -18,13 +27,17 @@ function App() {
     console.log(start);
     setStart(false);
     setPlayerClass(null);
+    localStorage.clear();
     console.log(start);
     console.log(playerClass);
   };
 
-  const selectClass = (chosenClass) => {
+  const selectClass = (chosenClass, info) => {
     setPlayerClass(chosenClass);
+    setClassInfo(info);
     console.log(`You have chosen: ${chosenClass}`);
+    localStorage.setItem("ClassInfo", JSON.stringify(info)); // Store class info in local storage
+    console.log(`${chosenClass} class info saved to local storage.`);
   };
 
   return (
@@ -56,6 +69,7 @@ function App() {
       ) : (
         <div>
           <Adventure playerClass={playerClass} />
+          <DiceRoller />
         </div>
       )}
       <div>
