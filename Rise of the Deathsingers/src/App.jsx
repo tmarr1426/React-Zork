@@ -1,14 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import {
-  Warrior,
-  Mage,
-  Priest,
-  Rogue,
-  Adventure,
-  ChapterOne,
-  DiceRoller,
-} from "./index";
+import { Warrior, Mage, Priest, Rogue, Adventure, DiceRoller } from "./index";
 
 function App() {
   // State tracking for starting the game
@@ -46,7 +38,7 @@ function App() {
       {!start ? (
         <>
           <div>
-            <h1>Welcome to The Rise of the Deathsingers.</h1>
+            <h1>Welcome to The Rise of the Deathsingers</h1>
             <p>Are you ready to begin your adventure?</p>
           </div>
           <div>
@@ -69,7 +61,7 @@ function App() {
       ) : (
         <div>
           <Adventure playerClass={playerClass} />
-          <DiceRoller />
+          {/* <DiceRoller /> */}
         </div>
       )}
       <div>

@@ -2,10 +2,15 @@ import React from "react";
 
 const Warrior = ({ onSelect }) => {
   const classInfo = {
-    character: Warrior,
     hp: 10,
     type: "Martial",
     level: 1,
+    attacks: [
+      {
+        name: "Longsword",
+        use: "Deal damage to an enemy.",
+      },
+    ],
     ability: [
       {
         Bulwark:
@@ -17,11 +22,13 @@ const Warrior = ({ onSelect }) => {
     equipment: [
       {
         Longsword: "A typical longsword utilized by most fighters",
+        Type: "Weapon",
         Damage: 3,
         Special: null,
       },
       {
         Shield: "A wooden shield used by most fighters",
+        Type: "Armor",
         Damage: -1,
         Special: null,
       },
